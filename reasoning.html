@@ -4,13 +4,11 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <title>Examples</title>
-<meta name="description" content="">
-<meta name="keywords" content="">
-<link href="" rel="stylesheet">
+
 </head>
 <body>
-
   <script type="text/javascript">
+
     //第二题的判断条件
     function check1(choose) {
       if (choose[1] == 'A') {
@@ -43,17 +41,17 @@
         }
       }
       if (choose[2] == 'B') {
-        if ((choose[5] == choose[2] && choose[5] != choose[1]) && (choose[5] != choose[3])) {
+        if ((choose[5] != choose[2] && choose[5] != choose[1]) && (choose[5] != choose[3])) {
           return true;
         }
       }
       if (choose[2] == 'C') {
-        if ((choose[1] == choose[2] && choose[1] != choose[5]) && (choose[1] != choose[3])) {
+        if ((choose[1] != choose[2] && choose[1] != choose[5]) && (choose[1] != choose[3])) {
           return true;
         }
       }
       if (choose[2] == 'D') {
-        if ((choose[3] == choose[2] && choose[3] != choose[5]) && (choose[3] != choose[1])) {
+        if ((choose[3] != choose[2] && choose[3] != choose[5]) && (choose[3] != choose[1])) {
           return true;
         }
       }
@@ -404,9 +402,6 @@
     //构造数据，开始判断
     var question = Array(10);
     var options = ['A','B','C','D'];
-    for (var i = 0; i < 10; i++) {
-      question[i] = options;
-    }
     var choose = Array(10);
     for (var i = 0; i < 4; i++) {
       for (var j = 0; j < 4; j++) {
@@ -418,16 +413,16 @@
                   for (var p = 0; p < 4; p++) {
                     for (var q = 0; q < 4; q++) {
                       for (var r = 0; r < 4; r++) {
-                        choose[0] = question[0][i];
-                        choose[1] = question[1][j];
-                        choose[2] = question[2][k];
-                        choose[3] = question[3][l];
-                        choose[4] = question[4][m];
-                        choose[5] = question[5][n];
-                        choose[6] = question[6][o];
-                        choose[7] = question[7][p];
-                        choose[8] = question[8][q];
-                        choose[9] = question[9][r];
+                        choose[0] = options[i];
+                        choose[1] = options[j];
+                        choose[2] = options[k];
+                        choose[3] = options[l];
+                        choose[4] = options[m];
+                        choose[5] = options[n];
+                        choose[6] = options[o];
+                        choose[7] = options[p];
+                        choose[8] = options[q];
+                        choose[9] = options[r];
                         if(!check1(choose)) continue;
                         if(!check2(choose)) continue;
                         if(!check3(choose)) continue;
